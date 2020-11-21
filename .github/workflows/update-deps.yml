@@ -20,7 +20,7 @@ jobs:
         run: npm i ${{ github.event.client_payload.name }}@${{ github.event.client_payload.version }}
 
       - name: Create Pull Request with updated package files
-        uses: peter-evans/create-pull-request@v2.4.4
+        uses: peter-evans/create-pull-request@v3
         with:
           base: main
           commit-message: 'chore(update-deps): update ${{ github.event.client_payload.name }} to ${{ github.event.client_payload.version }}'
