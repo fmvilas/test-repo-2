@@ -23,9 +23,9 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           base: main
-          commit-message: 'chore(update-deps): update ${{ github.event.client_payload.name }} to ${{ github.event.client_payload.version }}'
+          commit-message: 'chore(deps): update ${{ github.event.client_payload.name }} to ${{ github.event.client_payload.version }}'
           committer: asyncapi-bot <info@asyncapi.io>
           author: asyncapi-bot <info@asyncapi.io>
-          title: 'chore(update-deps): update ${{ github.event.client_payload.name }} to ${{ github.event.client_payload.version }}'
+          title: 'chore(deps): update ${{ github.event.client_payload.name }} to ${{ github.event.client_payload.version }}'
           body: 'Version update in package.json and package-lock.json dependencies: ${{ github.event.client_payload.name }}@${{ github.event.client_payload.version }}.'
           branch: update-deps/${{ github.event.client_payload.name }}-${{ github.event.client_payload.version }}
