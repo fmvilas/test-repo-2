@@ -21,10 +21,8 @@ jobs:
 
       - name: Create Pull Request with updated package files
         uses: peter-evans/create-pull-request@v2.4.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          base: main
           commit-message: 'chore(update-deps): update ${{ github.event.client_payload.name }} to ${{ github.event.client_payload.version }}'
           committer: asyncapi-bot <info@asyncapi.io>
           author: asyncapi-bot <info@asyncapi.io>
