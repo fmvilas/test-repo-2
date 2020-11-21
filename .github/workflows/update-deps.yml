@@ -8,8 +8,12 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
       - name: Update dependency version
         run: npm i ${{ github.event.client_payload.name }}@${{ github.event.client_payload.version }}
+        
       - name: Create Pull Request with updated package files
         uses: peter-evans/create-pull-request@v2.4.4
         env:
