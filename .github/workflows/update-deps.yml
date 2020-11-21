@@ -1,0 +1,13 @@
+name: Update dependencies
+
+on:
+  repository_dispatch:
+    types: [fmvilas/test-repo-1/release]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update dependency version
+        run: |
+          npm i ${{ github.event.client_payload.name }}@${{ github.event.client_payload.version }}
