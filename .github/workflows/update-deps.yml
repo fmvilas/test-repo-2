@@ -27,5 +27,5 @@ jobs:
           committer: asyncapi-bot <info@asyncapi.io>
           author: asyncapi-bot <info@asyncapi.io>
           title: 'chore(update-deps): update ${{ github.event.client_payload.name }} to ${{ github.event.client_payload.version }}'
-          body: 'Version update in package.json and package-lock.json dependencies for update ${{ github.event.client_payload.name }}@${{ github.event.client_payload.version }}.'
+          body: 'Version update in package.json and package-lock.json dependencies: ${{ github.event.client_payload.name }}@${{ github.event.client_payload.version }}.'
           branch: update-deps/${{ github.event.client_payload.name }}-${{ github.event.client_payload.version }}
