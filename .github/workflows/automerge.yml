@@ -1,4 +1,4 @@
-name: Automerge approved bot pull requests
+name: Automerge pull requests with `approved` label
 
 on:
   pull_request_review:
@@ -13,11 +13,9 @@ jobs:
 
       - name: Automerging
         uses: pascalgn/automerge-action@v0.7.5
-        if: github.event.review.state == 'approved' && (github.actor == 'asyncapi-bot' || github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]' || github.actor == 'github-actions')
         env:
           GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"
           GITHUB_LOGIN: asyncapi-bot
-          MERGE_LABELS: ""
           MERGE_METHOD: "squash"
           MERGE_COMMIT_MESSAGE: "pull-request-title"
           MERGE_RETRIES: "10"
