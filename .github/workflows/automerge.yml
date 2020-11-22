@@ -6,17 +6,7 @@ on:
       - submitted
   
 jobs:
-  autoapprove:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Autoapproving
-        uses: hmarr/auto-approve-action@v2
-        if: github.context.review.state == 'approved' && (github.actor == 'asyncapi-bot' || github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]')
-        with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-
   automerge:
-    needs: [autoapprove]
     runs-on: ubuntu-latest
     steps:
       - name: Automerging
