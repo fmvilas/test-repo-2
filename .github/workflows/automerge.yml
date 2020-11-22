@@ -9,11 +9,11 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      - run: echo '${{ toJson(github.event) }}'
-      
+      - run: echo '${{ github.actor }}'
+
       - name: Automerging
         uses: pascalgn/automerge-action@v0.7.5
-        if: github.event.review.state == 'approved' && (github.actor == 'asyncapi-bot' || github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]')
+        if: github.event.review.state == 'approved' && (github.actor == 'asyncapi-bot' || github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]' || github.actor == 'github-actions')
         env:
           GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"
           GITHUB_LOGIN: asyncapi-bot
