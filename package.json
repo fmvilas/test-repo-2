@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/fmvilas/test-repo-2#readme",
   "dependencies": {
-    "@asyncapi/generator": "^1.0.0"
+    "@asyncapi/generator": "^1.0.1"
   }
 }
