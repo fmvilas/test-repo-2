@@ -1,9 +1,9 @@
 name: Automerge pull requests with `approved` label
 
 on:
-  pull_request_review:
+  pull_request:
     types:
-      - submitted
+      - labeled
   
 jobs:
   automerge:
