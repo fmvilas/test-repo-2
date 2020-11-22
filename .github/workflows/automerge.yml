@@ -19,3 +19,4 @@ jobs:
           MERGE_COMMIT_MESSAGE: "pull-request-title"
           MERGE_RETRIES: "10"
           MERGE_RETRY_SLEEP: "10000"
+          MERGE_DELETE_BRANCH: true
